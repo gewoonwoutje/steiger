@@ -1,0 +1,12 @@
+{
+	"tasks": {
+		"start": "deno run src/main.ts"
+	},
+	"importMap": "importMap.jsonc",
+	"fmt": {
+		"options": {
+			"useTabs": true,
+			"singleQuote": true
+		}
+	}
+}
