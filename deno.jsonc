@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"start": "deno run src/main.ts"
+		"start": "deno run --allow-run --allow-read src/main.ts"
 	},
 	"importMap": "importMap.jsonc",
 	"fmt": {

@@ -1,1 +1,1 @@
-export { sayHi } from './hiSayer.ts';
+export { cloneRepo } from './git.ts';

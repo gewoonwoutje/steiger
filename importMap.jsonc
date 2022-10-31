@@ -1,6 +1,8 @@
 {
 	"imports": {
 		"/src/": "./src/",
+		"flags/": "https://deno.land/std@0.161.0/flags/",
+		"path/": "https://deno.land/std@0.161.0/path/",
 		"testing/": "https://deno.land/std@0.161.0/testing/"
 	}
 }
