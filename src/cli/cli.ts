@@ -1,16 +1,13 @@
-export async function cloneRepo(url: string, path: string) {
+export async function invoke(cmd: string[], cwd?: string) {
 	const proc = Deno.run({
 		stderr: 'piped',
 		stdout: 'piped',
-		cmd: [
-			'git',
-			'clone',
-			url,
-			path,
-		],
+		cmd,
+		cwd,
 	});
+
 	try {
-		const [status, _output, errOutput] = await Promise.all([
+		const [status, output, errOutput] = await Promise.all([
 			proc.status(),
 			proc.output(),
 			proc.stderrOutput(),
@@ -21,6 +18,8 @@ export async function cloneRepo(url: string, path: string) {
 				`Process exited with status code ${status.code}: ${message}`,
 			);
 		}
+
+		return { status, output, errOutput };
 	} finally {
 		proc.close();
 	}
